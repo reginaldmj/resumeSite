@@ -1,16 +1,16 @@
+{% extends 'main/base.html' &}
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Did Coding - Home</title>
-    <meta name="author" content="Did Coding Limited & James Granger Design">
-    <link rel="canonical" href="{{request.path}}"/>
-    <link rel="home" href="{% url resumeApp 'ResumeApp:home' %}"/>
-    <meta name="description" content="{% block description %}{% endblock %}">
-    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <!-- =============================
+    Start SEO blocks
+  ====================================-->
+    {% block title %}Did Coding - Home{%endblock %}
+    {% block description %}{% endblock %}
+    {% block keywords %}{% endblock %}
+    <!-- =============================
+    END SEO blocks
+  ==================================== -->
+    
 
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/icon.jpg'%}">
     <link rel="apple-touch-icon" type="image/jpg" href="{% static 'images/icon.jpg'%}">
