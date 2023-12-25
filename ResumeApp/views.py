@@ -14,7 +14,7 @@ from django.views import generic
 from . forms import ContactForm
 
 
-class IndexView(generic.TemplateView):
+class IndexView(generic.TemplateView): # index / home page
 	template_name = "ResumeApp/index.html"
 
 	def get_context_data(self, **kwargs):
@@ -32,7 +32,7 @@ class IndexView(generic.TemplateView):
 		return context
 
 
-class ContactView(generic.FormView):
+class ContactView(generic.FormView): # contact url page
 	template_name = "ResumeApp/contact.html"
 	form_class = ContactForm
 	success_url = "/"
@@ -43,7 +43,7 @@ class ContactView(generic.FormView):
 		return super().form_valid(form)
 
 
-class PortfolioView(generic.ListView):
+class PortfolioView(generic.ListView): # portfolio page
 	model = Portfolio
 	template_name = "ResumeApp/portfolio.html"
 	paginate_by = 10
@@ -52,11 +52,11 @@ class PortfolioView(generic.ListView):
 		return super().get_queryset().filter(is_active=True)
 
 
-class PortfolioDetailView(generic.DetailView):
+class PortfolioDetailView(generic.DetailView): # portfolio view page
 	model = Portfolio
 	template_name = "ResumeApp/portfolio-detail.html"
 
-class BlogView(generic.ListView):
+class BlogView(generic.ListView): # blog view page
 	model = Blog
 	template_name = "ResumeApp/blog.html"
 	paginate_by = 10
@@ -65,6 +65,6 @@ class BlogView(generic.ListView):
 		return super().get_queryset().filter(is_active=True)
 
 
-class BlogDetailView(generic.DetailView):
+class BlogDetailView(generic.DetailView): # blog details page
 	model = Blog
 	template_name = "ResumeApp/blog-detail.html"

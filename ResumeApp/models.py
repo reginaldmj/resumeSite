@@ -4,7 +4,7 @@ from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
 
 
-class Skill(models.Model):
+class Skill(models.Model): # profile skill section
     class Meta:
         verbose_name_plural = 'Skills'
         verbose_name = 'Skill'
@@ -17,7 +17,7 @@ class Skill(models.Model):
     def __str__(self):
         return self.name
 
-class UserProfile(models.Model):
+class UserProfile(models.Model): # profile to complete
 
     class Meta:
         verbose_name_plural = 'User Profiles'
@@ -34,7 +34,7 @@ class UserProfile(models.Model):
         return f'{self.user.first_name} {self.user.last_name}'
 
 
-class ContactProfile(models.Model):
+class ContactProfile(models.Model): # contact profile
     
     class Meta:
         verbose_name_plural = 'Contact Profiles'
@@ -50,7 +50,7 @@ class ContactProfile(models.Model):
 
 
 
-class Testimonial(models.Model):
+class Testimonial(models.Model): # testimonial space
 
     class Meta:
         verbose_name_plural = 'Testimonials'
@@ -67,7 +67,7 @@ class Testimonial(models.Model):
         return self.name
 
 
-class Media(models.Model):
+class Media(models.Model): # media files
 
     class Meta:
         verbose_name_plural = 'Media Files'
@@ -86,7 +86,7 @@ class Media(models.Model):
     def __str__(self):
         return self.name
 
-class Portfolio(models.Model):
+class Portfolio(models.Model): # portfolio section
 
     class Meta:
         verbose_name_plural = 'Portfolio Profiles'
@@ -112,7 +112,7 @@ class Portfolio(models.Model):
         return f"/portfolio/{self.slug}"
 
 
-class Blog(models.Model):
+class Blog(models.Model): # blog section
 
     class Meta:
         verbose_name_plural = 'Blog Profiles'
@@ -140,7 +140,7 @@ class Blog(models.Model):
         return f"/blog/{self.slug}"
 
 
-class Certificate(models.Model):
+class Certificate(models.Model): # certificate section
 
     class Meta:
         verbose_name_plural = 'Certificates'
